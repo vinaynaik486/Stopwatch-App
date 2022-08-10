@@ -19,7 +19,7 @@ function App() {
   }, [running]);
 
   return (
-    <div className='flex flex-col justify-center items-center scroll-py-9 '>
+    <div className='flex flex-col justify-center items-center h-screen scroll-py-9 '>
       <h1 className='text-2xl font-semibold'>Stopwatch</h1>
       <div className='text-xl font-semibold py-4' >
         <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
@@ -29,12 +29,12 @@ function App() {
       <div className='w-1/3 max-w-sm flex flex-row justify-evenly'>
         {
           running ?
-            (<button className='border border-black  bg-red-400 rounded-sm px-4 py-1 hover:bg-red-500' onClick={() => { setRunning(false) }} >Stop</button>)
+            (<button className='border border-black  bg-red-400 rounded-md px-4 py-1 hover:bg-red-500' onClick={() => { setRunning(false) }} >Stop</button>)
             :
-            (<button className='border border-black  bg-red-400  rounded-sm px-4 py-1 hover:bg-red-500' onClick={() => { setRunning(true) }} >Start</button>)
+            (<button className='border border-black  bg-red-400  rounded-md px-4 py-1 hover:bg-red-500' onClick={() => { setRunning(true) }} >Start</button>)
         }
 
-        <button className='border border-black bg-red-400 rounded-sm px-2.5 py-1 hover:bg-red-500 ' onClick={() => { setTime(0), setRunning(false) }} >Reset</button>
+        <button className='border border-black bg-red-400 rounded-md px-2.5 py-1 hover:bg-red-500 ' onClick={() => { setTime(0), setRunning(false) }} >Reset</button>
       </div>
     </div>
   )
